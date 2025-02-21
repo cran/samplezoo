@@ -1,6 +1,6 @@
 Package: samplezoo
 Title: Generate Samples with a Variety of Probability Distributions
-Version: 1.2.0
+Version: 1.2.1
 Authors@R: person(given = "Nicholas",
                   family = "Vietto", 
                   email = "nicholasvietto@gmail.com", 
@@ -17,7 +17,7 @@ URL: https://github.com/nvietto/samplezoo,
         https://nvietto.github.io/samplezoo/
 BugReports: https://github.com/nvietto/samplezoo/issues
 NeedsCompilation: no
-Packaged: 2025-01-31 19:01:34 UTC; nicholasvietto
+Packaged: 2025-02-21 16:21:32 UTC; nicholasvietto
 Author: Nicholas Vietto [aut, cre, cph]
 Repository: CRAN
-Date/Publication: 2025-01-31 19:10:02 UTC
+Date/Publication: 2025-02-21 16:40:02 UTC

@@ -29,6 +29,16 @@ data_large <- samplezoo("large")
 head(data_large)
 
 ## -----------------------------------------------------------------------------
+set.seed(123)
+data_large <- samplezoo("large")
+head(data_large)
+
+## -----------------------------------------------------------------------------
+set.seed(123)
+data_large <- samplezoo("large")
+head(data_large)
+
+## -----------------------------------------------------------------------------
 set.seed(456)
 data_large <- samplezoo("large")
 head(data_large)

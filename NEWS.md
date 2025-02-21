@@ -1,12 +1,16 @@
-# samplezoo 1.2.0
-
 # samplezoo 1.2.1
 
+* Fixed the Bernoulli distribution
+
+* Made dfs constant across sample sizes
+
+* Fixed documentation
+
+* Clarified set.seed function in vignette
+
+# samplezoo 1.2.0
+
 * Added support for the F distribution.
-
-* Fixed incorrect binomial aliases in the documentation.
-
-* Introduced a variability parameter to the binomial distribution.
 
 * Corrected notation errors (e.g., norm2 instead of norm_2)
 

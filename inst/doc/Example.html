@@ -357,97 +357,133 @@ Binomial, Poisson, and others.</p></li>
 <h3>Generate a small dataset (i.e., 100 rows)</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>data_small <span class="ot">&lt;-</span> <span class="fu">samplezoo</span>(<span class="st">&quot;small&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">head</span>(data_small)</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2   norm_3 binom neg pois        exp      unif      beta</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt; 1 52.69034 49.96545 53.35655     1   0    3  2.0434317 0.1129147 0.1540612</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt; 2 81.28921 49.37707 45.78710     1   0    2 20.4089309 0.1427738 0.4809002</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; 3 37.87634 31.38593 44.36526     0   0    1 10.6642000 0.8522358 0.5184911</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt; 4 57.29915 67.81063 39.12621     0   1    3  0.1972188 0.2909152 0.2841699</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; 5 57.90277 49.28486 20.16397     0   2    3  3.9988879 0.1521336 0.5906541</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; 6 52.92176 30.52901 39.68084     0   0    2  2.6398123 0.8283023 0.1771189</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;       gamma    chi_sq      t_dist    f_dist</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; 1 2.1331262 0.4091359  0.38334469 0.5132548</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; 2 8.4017675 1.4830168  0.06645704 1.9610566</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; 3 0.3149984 1.0915302  0.58173285 1.1829001</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; 4 0.6973711 0.6047910 -0.46067958 0.5318871</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; 5 6.8879225 1.2900952  0.09708759 1.5101296</span></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; 6 3.9811520 8.6402532  2.83688173 1.4700840</span></span></code></pre></div>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2   norm_3 bern neg pois       exp      unif       beta</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt; 1 52.81412 53.51319 53.67912    0   4    1  2.930778 0.6989983 0.10578491</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt; 2 68.23793 59.38779 35.13537    1   0    2  0.927297 0.2805017 0.07902199</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; 3 68.65313 58.44543 40.40566    0   0    1 34.820686 0.2691659 0.39371600</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt; 4 45.62340 73.49855 61.86956    0   2    5 11.391594 0.6804970 0.46589920</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; 5 43.92391 37.85506 65.47060    0   0    1 21.108217 0.3427744 0.75404320</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; 6 51.66342 46.86237 81.70720    1   1    1  8.234561 0.3648130 0.14351144</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;       gamma    chi_sq     t_dist    f_dist</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; 1 3.3267537  7.212244 -0.8529863 0.5167607</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; 2 3.6669007  9.661967 -1.0643916 0.7294443</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; 3 4.1921663  5.173578  0.5679994 0.9108190</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; 4 0.8220897  8.708574  1.4667282 1.4952712</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; 5 2.0554174 19.556774 -0.6172805 0.1470397</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; 6 2.7243905 11.227294 -3.5974447 1.1166657</span></span></code></pre></div>
 </div>
 <div id="generate-a-medium-sized-dataset-i.e.-1000-rows" class="section level3">
 <h3>Generate a medium sized dataset (i.e., 1,000 rows)</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>data_medium <span class="ot">&lt;-</span> <span class="fu">samplezoo</span>(<span class="st">&quot;medium&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">head</span>(data_medium)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2   norm_3 binom neg pois        exp      unif      beta</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; 1 57.08602 47.86841 18.47513     0   0    2 10.6980421 0.4820095 0.2277996</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; 2 24.97982 74.53643 57.30413     1   0    5  0.9868764 0.5989633 0.1413982</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; 3 26.94944 62.89636 44.62021     1   1    0  3.1632984 0.4550301 0.2961892</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 4 77.91185 66.34961 34.01029     1   0    5 44.2694052 0.5419444 0.4335306</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 5 48.24955 66.94171 20.74053     0   0    1  4.2539453 0.2907816 0.3487935</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 6 27.54323 47.04133 47.85437     0   5    2  8.9892236 0.2168603 0.4364966</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;        gamma    chi_sq     t_dist    f_dist</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 1  4.8695576 10.450353 -0.7899664 0.4713585</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 2  0.9266157  4.394429 -0.1796965 0.6520039</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 3 13.2726575  0.943484  1.5466515 1.7783990</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 4  5.4080187  6.585922  0.2512173 0.2533718</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 5  1.9115269  2.599784 -0.2838543 1.3787694</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 6  2.6004048  2.240470  0.1171521 0.7388637</span></span></code></pre></div>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2    norm_3 bern neg pois       exp      unif      beta</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; 1 46.02367 71.25660 39.750130    0   0    2 21.772330 0.9305956 0.4539395</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; 2 49.32905 58.94355 -3.378858    0   2    1 24.235364 0.7742999 0.2503492</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; 3 58.65559 69.64089  6.842902    1   2    2 27.303474 0.7920125 0.2215807</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 4 29.89703 56.91901 70.248972    0   3    2 53.093483 0.6174459 0.2416861</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 5 76.22624 59.05343 30.431970    1   3    4  1.065747 0.9747066 0.4487912</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 6 40.68722 64.01339 12.307218    0   2    1  7.177614 0.7474789 0.4006164</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;       gamma    chi_sq     t_dist    f_dist</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 1 4.9530141 11.196222 -0.8598328 3.2969429</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 2 1.4745625  8.721485 -0.2513822 1.1522467</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 3 0.4714032  7.562053  1.3909277 1.1831806</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 4 2.3675387 16.463112  0.4024442 1.1443270</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 5 4.0108882  5.337741  0.8392667 1.1098908</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 6 4.8259632 11.386632 -0.2674480 0.6722363</span></span></code></pre></div>
 </div>
 <div id="generate-a-large-sized-dataset-i.e.-10000-rows" class="section level3">
 <h3>Generate a large sized dataset (i.e., 10,000 rows)</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>data_large <span class="ot">&lt;-</span> <span class="fu">samplezoo</span>(<span class="st">&quot;large&quot;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">head</span>(data_large)</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2    norm_3 binom neg pois         exp        unif      beta</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; 1 49.90275 56.62359 49.235616     0   0    0  9.16426745 0.391779083 0.2506626</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; 2 46.20065 67.61841 72.543713     0   1    2  0.03060789 0.151821510 0.3834547</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; 3 77.88145 70.81872 43.319279     1   0    6 17.28685921 0.070600295 0.1159225</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; 4 55.48893 51.10649  8.591812     0   2    3  4.99532666 0.001219014 0.2920635</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; 5 50.62134 72.90647 47.956821     1   1    2 13.83761106 0.268229936 0.4366961</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 6 35.76584 61.40471 23.218152     0   5    6 14.13727974 0.729345478 0.2617002</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2   norm_3 bern neg pois       exp       unif       beta</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; 1 68.17047 43.77534 32.77409    0   0    2  7.686341 0.07423565 0.22908364</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; 2 54.50925 57.31223 19.59262    0   0    3  5.295738 0.43575854 0.28826722</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; 3 34.23543 73.95832 35.53038    0   1    1 18.730670 0.07914885 0.02256758</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; 4 71.51849 66.28091 40.40233    1   0    8 18.031923 0.90119115 0.36785600</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; 5 54.46610 68.21688 36.06081    0   1    1  8.926137 0.90411665 0.57451053</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 6 48.68553 60.46151 53.43388    1   1    2  2.153736 0.25749653 0.43182738</span></span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;      gamma    chi_sq     t_dist    f_dist</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 1 2.055949 12.880766  1.0066483 0.3354664</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 2 6.361658 20.701630  0.9045218 0.8281796</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 3 1.703692 12.032983 -1.9546264 0.9750920</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 4 2.109311 11.745271  0.2308021 1.0365954</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; 5 1.968892  9.963203 -0.7003722 0.9779980</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; 6 6.069446 12.815971 -1.1093519 1.1923196</span></span></code></pre></div>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 1 3.527325 14.116512  0.1701468 1.1050098</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 2 1.410158  4.353722 -0.8447841 2.2619767</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 3 2.300857 10.397276  2.1414233 1.6591481</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 4 4.877539 12.756853  0.5519434 1.0611762</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; 5 2.961266 10.642384  0.6644180 0.8904096</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; 6 3.291894 12.879280 -0.3902477 3.0987640</span></span></code></pre></div>
 </div>
 <div id="adding-variation-or-ensuring-reproducibility-with-set.seed" class="section level3">
 <h3>Adding Variation or Ensuring Reproducibility with set.seed()</h3>
 <p>To ensure reproducibility and introduce controlled variation in your
 dataset, use set.seed() before generating random data.</p>
+<p><strong>Reproducibility</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>data_large <span class="ot">&lt;-</span> <span class="fu">samplezoo</span>(<span class="st">&quot;large&quot;</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">head</span>(data_large)</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2    norm_3 binom neg pois        exp       unif      beta</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; 1 41.59287 83.70725 23.274065     0   1    4  6.4048718 0.85600403 0.1653553</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; 2 46.54734 58.33188 35.588540     1   3    1 17.3009535 0.60848590 0.3882179</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; 3 73.38062 69.26961 -2.070295     0   0    3  5.3458905 0.04511189 0.2785217</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; 4 51.05763 54.31848  6.643849     1   2    8 13.8085160 0.69891376 0.3521530</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt; 5 51.93932 62.25090 18.040743     0   2    6  0.7016051 0.92416072 0.3165094</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt; 6 75.72597 71.31986  6.687576     0   0    1 12.5201690 0.12233989 0.6563864</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2    norm_3 bern neg pois       exp      unif       beta</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; 1 41.59287 83.70725 23.274065    0   1    6  6.628373 0.5468223 0.08294255</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; 2 46.54734 58.33188 35.588540    1   0    5 21.305366 0.3900809 0.63544684</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; 3 73.38062 69.26961 -2.070295    1   2    4  0.189645 0.7262119 0.11520674</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; 4 51.05763 54.31848  6.643849    0   2    2  8.479098 0.5101462 0.38184206</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt; 5 51.93932 62.25090 18.040743    0   0    2 11.885521 0.2964126 0.17196046</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt; 6 75.72597 71.31986  6.687576    0   1    4  6.363993 0.1442317 0.35908460</span></span>
 <span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt;       gamma    chi_sq     t_dist    f_dist</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt; 1 2.9538585  7.043010 -0.2133706 1.9694189</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; 2 5.0453279 15.098221 -0.9622741 0.4872297</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; 3 4.4267940  5.747358  1.1208978 0.5503424</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; 4 0.5134084  9.698822  0.1267564 0.4970970</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; 5 2.2646161  7.493394  0.6761810 1.5805821</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; 6 2.5383052 10.504139 -0.1209223 1.3571306</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt; 1 6.9893762 10.286282 -0.3814568 0.7264343</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; 2 5.4087626  6.519658 -2.3409216 0.9698166</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; 3 1.2587867  8.011417 -0.4744159 0.4329175</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; 4 0.9871787 14.780626  0.4292511 1.0227474</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; 5 2.4021943  6.799788 -0.6692669 2.7446729</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; 6 4.2109032 17.858701 -0.3370763 1.3993853</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>data_large <span class="ot">&lt;-</span> <span class="fu">samplezoo</span>(<span class="st">&quot;large&quot;</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">head</span>(data_large)</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2     norm_3 binom neg pois        exp      unif      beta</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt; 1 29.84718 68.13494  7.9885694     0   0    6  0.3781432 0.3005967 0.4006597</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; 2 59.32663 52.32066 21.2526086     0   0    8 17.2863235 0.6932615 0.1509395</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt; 3 62.01312 62.47569 38.4789563     1   1    2 31.1729393 0.6073009 0.4831276</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt; 4 29.16661 53.51086 -0.8656269     0   0    0 17.0081881 0.5068313 0.2763463</span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt; 5 39.28465 47.19406 47.7819258     0   0    0  2.2526162 0.1013541 0.1490147</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; 6 45.13908 63.33566 53.3620528     1   6    4  1.4136846 0.9065914 0.3080311</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2    norm_3 bern neg pois       exp      unif       beta</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt; 1 41.59287 83.70725 23.274065    0   1    6  6.628373 0.5468223 0.08294255</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; 2 46.54734 58.33188 35.588540    1   0    5 21.305366 0.3900809 0.63544684</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt; 3 73.38062 69.26961 -2.070295    1   2    4  0.189645 0.7262119 0.11520674</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt; 4 51.05763 54.31848  6.643849    0   2    2  8.479098 0.5101462 0.38184206</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt; 5 51.93932 62.25090 18.040743    0   0    2 11.885521 0.2964126 0.17196046</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; 6 75.72597 71.31986  6.687576    0   1    4  6.363993 0.1442317 0.35908460</span></span>
 <span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt;       gamma    chi_sq     t_dist    f_dist</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; 1 2.7496531 11.072262 -0.4046877 1.4013145</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; 2 2.4903396  9.648422 -0.7709046 0.3333817</span></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; 3 1.4651266  6.867532 -0.4342910 0.9866586</span></span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; 4 0.8683201 10.147377 -0.4917028 0.4282699</span></span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; 5 2.6443795 12.757989  0.6695139 0.3894010</span></span>
-<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; 6 1.9639101 12.467940 -0.3040910 1.0731372</span></span></code></pre></div>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; 1 6.9893762 10.286282 -0.3814568 0.7264343</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; 2 5.4087626  6.519658 -2.3409216 0.9698166</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; 3 1.2587867  8.011417 -0.4744159 0.4329175</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; 4 0.9871787 14.780626  0.4292511 1.0227474</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; 5 2.4021943  6.799788 -0.6692669 2.7446729</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; 6 4.2109032 17.858701 -0.3370763 1.3993853</span></span></code></pre></div>
+<p><strong>Variation</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>data_large <span class="ot">&lt;-</span> <span class="fu">samplezoo</span>(<span class="st">&quot;large&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="fu">head</span>(data_large)</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2    norm_3 bern neg pois       exp      unif       beta</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; 1 41.59287 83.70725 23.274065    0   1    6  6.628373 0.5468223 0.08294255</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; 2 46.54734 58.33188 35.588540    1   0    5 21.305366 0.3900809 0.63544684</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; 3 73.38062 69.26961 -2.070295    1   2    4  0.189645 0.7262119 0.11520674</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; 4 51.05763 54.31848  6.643849    0   2    2  8.479098 0.5101462 0.38184206</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; 5 51.93932 62.25090 18.040743    0   0    2 11.885521 0.2964126 0.17196046</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; 6 75.72597 71.31986  6.687576    0   1    4  6.363993 0.1442317 0.35908460</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt;       gamma    chi_sq     t_dist    f_dist</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; 1 6.9893762 10.286282 -0.3814568 0.7264343</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt; 2 5.4087626  6.519658 -2.3409216 0.9698166</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt; 3 1.2587867  8.011417 -0.4744159 0.4329175</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; 4 0.9871787 14.780626  0.4292511 1.0227474</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt; 5 2.4021943  6.799788 -0.6692669 2.7446729</span></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt; 6 4.2109032 17.858701 -0.3370763 1.3993853</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>data_large <span class="ot">&lt;-</span> <span class="fu">samplezoo</span>(<span class="st">&quot;large&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="fu">head</span>(data_large)</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;       norm   norm_2     norm_3 bern neg pois        exp      unif       beta</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; 1 29.84718 68.13494  7.9885694    0   0    5  3.4417303 0.8866347 0.05413307</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; 2 59.32663 52.32066 21.2526086    0   3    3  0.8114356 0.7976466 0.07195440</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; 3 62.01312 62.47569 38.4789563    0   2    6 46.8038907 0.6469920 0.22555129</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; 4 29.16661 53.51086 -0.8656269    0   1    5 11.6955326 0.2036753 0.71455809</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; 5 39.28465 47.19406 47.7819258    1   1    1  0.3535625 0.3653401 0.34619912</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; 6 45.13908 63.33566 53.3620528    1   1    2  4.5592136 0.7628573 0.25880522</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt;       gamma    chi_sq     t_dist    f_dist</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; 1 6.7914120  4.464348 -1.0150596 2.2557295</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; 2 3.0132520  8.062120  0.3262369 1.4955877</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; 3 4.7360954 10.969593  1.5141157 1.0766901</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; 4 5.1235878  6.249247  0.6432708 1.1251542</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; 5 6.6851637  4.358815  0.2025742 0.4754946</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; 6 0.3903841 20.019575  1.6257109 0.6653886</span></span></code></pre></div>
 </div>
 </div>
 
